@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --paragraph-color: #ffffffbf;
+  --heading-color: #f2f2f2;
+  --orange-color: #e38826;
+  --blue-color: #006970;
+  --dark-blue: #004241;
+}
+
+/* GENERAL STYLING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--paragraph-color);
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: 700;
+  color: var(--heading-color);
+  text-transform: uppercase;
+
+  margin-bottom: 3.2rem;
+}
+
+p {
+  font-size: 2rem;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  color: var(--paragraph-color);
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-img {
+  width: 7rem;
+  height: auto;
+  margin-bottom: 3.2rem;
+}
+
+.grid-columns {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 3rem;
+}
+
+.column-1 {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: var(--orange-color);
+}
+
+.column-2 {
+  background-color: var(--blue-color);
+}
+
+.column-3 {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: var(--dark-blue);
+}
+
+.learn-btn {
+  width: fit-content;
+  position: relative;
+  top: 30%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  transition: all 0.7s;
+}
+
+.column-1 .learn-btn {
+  color: var(--orange-color);
+  background-color: var(--heading-color);
+}
+
+.column-2 .learn-btn {
+  color: var(--blue-color);
+  background-color: var(--heading-color);
+}
+
+.column-3 .learn-btn {
+  color: var(--dark-blue);
+  background-color: var(--heading-color);
+}
+
+.learn-btn:hover {
+  background-color: var(--paragraph-color);
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+  .main-container {
+    width: 40rem;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .grid-columns {
+    height: 50rem;
+  }
+
+  .learn-btn {
+    margin-bottom: 1.8rem;
+  }
+
+  .column-1,
+  .column-3 {
+    border-radius: 0;
+  }
+}
